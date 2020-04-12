@@ -1,0 +1,6 @@
+{
+  "extends": "lffg",
+  "globals": {
+    "use": true
+  }
+}
