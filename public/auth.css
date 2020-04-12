@@ -1,0 +1,58 @@
+.myForm {
+  min-width: 500px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border-radius: 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  font-weight: bold;
+  padding: 5px;
+}
+.myForm .register {
+  margin-top: 30px;
+  text-align: center;
+}
+.myForm .register .validation-code {
+  color: #f00;
+}
+
+.btn-action {
+  text-align: center;
+}
+
+.myForm .form-title {
+  text-align: center;
+}
+
+@media (max-width: 500px) {
+  .myForm {
+    min-width: 90%;
+  }
+}
+.bg-image {
+  /* The image used */
+  background-image: url('loginBackground.png');
+
+  /* Add the blur effect */
+  filter: blur(1px);
+  -webkit-filter: blur(1px);
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+span.form-error {
+  color: #f00;
+  font-size: 14px;
+}
+
+.borderless {
+  border: none;
+}

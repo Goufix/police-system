@@ -1,0 +1,55 @@
+@layout('layouts.auth')
+
+
+@section('formContent')
+<div class="form-group form-title">
+  <p>ATIVAR CONTA</p>
+</div>
+<form action="{{ route('userController.create') }}" method="POST">
+  {{ csrfField() }}
+<div class="form-group">
+  <label for="user">Usuário:</label>
+  <input class="form-control input-lg" value="{{ old('username', '')}}" type="username" name="username" id="username" placeholder="" />
+  @if(hasErrorFor('username'))
+  <span class="form-error">{{ getErrorFor('username') }}</span>
+  @endif
+  <small id="userAdvice" class="form-text text-muted">
+    Obrigatóriamente o mesmo nick usado no habblet.
+  </small>
+</div>
+
+<div class="form-group">
+  <label for="password">Email:</label>
+  <input class="form-control input-lg" value="{{ old('email', '')}}" type="email" name="email" placeholder="" />
+  @if(hasErrorFor('email'))
+  <span class="form-error">{{ getErrorFor('email') }}</span>
+  @endif
+</div>
+
+<div class="form-group">
+  <label for="password">Senha:</label>
+  <input class="form-control input-lg" value="{{ old('password', '')}}" type="password" name="password" placeholder="" />
+  @if(hasErrorFor('password'))
+  <span class="form-error">{{ getErrorFor('password') }}</span>
+  @endif
+</div>
+
+<div class="form-group">
+  <label for="password">Confirmar senha:</label>
+  <input class="form-control input-lg" value="{{ old('password_confirmation', '')}}" type="password" name="password_confirmation" placeholder="" />
+  @if(hasErrorFor('password_confirmation'))
+  <span class="form-error">{{ getErrorFor('password_confirmation') }}</span>
+  @endif
+</div>
+
+<div class="register">
+  <p>Após criar sua conta, você deverá aguardar a ativação.</p>
+</div>
+
+<hr />
+
+<div class="btn-action">
+  <input type="submit" name="submit" class="btn btn-primary" value="Criar" />
+</div>
+</form>
+@endsection
